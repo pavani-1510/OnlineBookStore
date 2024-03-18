@@ -22,10 +22,6 @@ Now go to admin page by using this link http://127.0.0.1:8000/admin/
  
 You will find the admin login page like above
 
-login with admin credentials:
-
-username : harika
-password : 12345
 --------------------------------------------------------------------------------------------------------------------------------------
 What to do if you don’t have a superuseraccount?(No need to follow this section if you already have a superuser)
 Open a new terminal in pycharm 
