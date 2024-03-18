@@ -23,7 +23,7 @@ Now go to admin page by using this link http://127.0.0.1:8000/admin/
 You will find the admin login page like above
 
 login with admin credentials
---------------------------------------------------------------------------------------------------------------------------------------
+
 What to do if you don’t have a superuseraccount?(No need to follow this section if you already have a superuser)
 Open a new terminal in pycharm 
 Enter the following command
@@ -31,7 +31,7 @@ py manage.py createsuperuser
 give username , email, password and re-enter the password.
 If it show this line “Bypass password validation and create user anyway? [y/N]:”
 Type y and click on enter now you have superuser account and you can continue with the following steps
---------------------------------------------------------------------------------------------------------------------------------------
+
 after successful login you will find like this
  
 admin account is also called as super user
@@ -43,7 +43,7 @@ you can add , delete and manage them
 You can similarly find for books and orders also.
 You don’t have to open or use groups in this project
 To logout from the admin account click on logout option from top right corner
---------------------------------------------------------------------------------------------------------------------------------------
+
 User:
 
 you will be redirected to home page
@@ -58,17 +58,17 @@ provide the details and create a account
 
 
 Note : Follow the requirements
-# 
-# Username - 	Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
-# 
-# Password - 	Your password can’t be too similar to your other personal information.
-# 		Your password must contain at least 8 characters.
-# 		Your password can’t be a commonly used password.
-# 		Your password can’t be entirely numeric.
-# 
-# Password confirmation: 
-#  		Enter the same password as before, for verification.
-# 
+ 
+ Username - 	Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+ 
+ Password - 	Your password can’t be too similar to your other personal information.
+ 		Your password must contain at least 8 characters.
+ 		Your password can’t be a commonly used password.
+ 		Your password can’t be entirely numeric.
+ 
+ Password confirmation: 
+  		Enter the same password as before, for verification.
+ 
 
 
 After successful creation of account , you will automatically redirected to the login page
@@ -102,43 +102,3 @@ You can find the price of the book
  
 You can find a button buy now
 When you click on the buy now button you will be redirected to the checkout page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
