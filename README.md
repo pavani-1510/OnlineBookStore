@@ -79,20 +79,24 @@ pip install -r requirements.txt
 
 > If `requirements.txt` is missing, run `pip freeze > requirements.txt` after installing Django.
 
-### 4. Apply Migrations
+### 4. Change settings.py
+
+Make changes in settings.py for Email, EmailHostPassword and SecretKey.
+
+### 5. Apply Migrations
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 5. Create Superuser
+### 6. Create Superuser
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 6. Run Development Server
+### 7. Run Development Server
 
 ```bash
 python manage.py runserver
@@ -128,17 +132,6 @@ You can deploy this Django app using:
 - **PythonAnywhere**
 - **AWS / GCP / Azure**
 - **Docker**
-
----
-
-## 📌 To Do
-
-- ✅ User authentication
-- ✅ Add to cart / order system
-- 🔄 Payment gateway integration
-- 🔄 Add pagination and filtering
-- 🔄 Full REST API with Django REST Framework
-- 🔄 Unit tests and CI/CD
 
 
 -----------------------
