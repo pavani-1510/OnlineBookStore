@@ -1,30 +1,41 @@
+
 # 📚 Online Book Store
 
-An Online Book Store web application developed using **JSP (JavaServer Pages)**, **Java**, and **MySQL**.  
-This project allows users to browse books, manage their cart, and place orders. Admins can manage inventory and orders.
+An online bookstore web application built using **Django**, allowing users to browse books, add them to a cart, place orders, and manage profiles. It also includes admin capabilities for managing books, orders, and users.
 
 ---
 
-## 🌟 Features
+## 🧰 Technologies Used
 
-- 🧑‍💼 User Registration and Login
-- 📖 Browse Available Books
-- 🛒 Add Books to Shopping Cart
-- 💳 Checkout and Place Orders
-- 📦 Admin Panel for Book Management
-- 🧾 Order Viewing and Deletion
-- 🎨 Clean UI using HTML and CSS
+- **Backend**: Python 3, Django
+- **Frontend**: HTML, CSS, Bootstrap
+- **Database**: SQLite (default Django DB)
+- **Others**: Django Admin, Template Language, Static Files Handling
 
 ---
 
-## 🛠️ Tech Stack
+## 🎯 Features
 
-| Layer | Technology |
-|------|------------|
-| Frontend | HTML, CSS, JSP |
-| Backend | Java (JSP) |
-| Database | MySQL |
-| Server | Apache Tomcat |
+### 🛍️ User Side
+- User registration, login, and logout
+- Profile update and order history
+- Browse books by category or name
+- Book detail pages with highlights
+- Add/remove items from cart
+- Checkout and place orders
+
+### 🧑‍💼 Admin Side
+- Django admin dashboard for managing:
+  - Books
+  - Orders
+  - Users
+  - Reviews
+  - Categories
+
+### ✨ Other Features
+- Book rating and reviews
+- Customer care messaging
+- Fully responsive UI using Bootstrap
 
 ---
 
@@ -32,77 +43,102 @@ This project allows users to browse books, manage their cart, and place orders. 
 
 ```
 OnlineBookStore-main/
-├── book.sql                   # MySQL database script
-├── cart.jsp                   # Add/view cart
-├── checkout.jsp               # Checkout process
-├── connection.jsp             # MySQL DB connection
-├── deletecart.jsp             # Remove item from cart
-├── deleteorder.jsp            # Admin deletes order
-├── deleteproduct.jsp          # Admin deletes product
-├── header.jsp                 # Common header
-├── index.jsp                  # Homepage
-├── login.jsp                  # User login
-├── order.jsp                  # User places order
-├── orders.jsp                 # Admin views all orders
-├── product.jsp                # Admin adds new product
-├── register.jsp               # New user registration
-├── style.css                  # Frontend styling
-├── updateorder.jsp            # Admin updates order
-├── updateproduct.jsp          # Admin updates product
-├── viewcart.jsp               # Cart overview
-├── vieworder.jsp              # View placed orders
-├── viewproduct.jsp            # View product catalog
+├── accounts/               # Handles user authentication, profiles, and customer care
+├── books/                  # Core bookstore logic: models, cart, orders, reviews
+├── ecom_project/           # Django settings, URLs, and WSGI
+├── static/                 # CSS, JS, Images
+├── templates/              # HTML templates
+├── db.sqlite3              # Default database
+├── manage.py               # Django management script
+└── requirements.txt        # Python dependencies (you can generate this)
 ```
 
 ---
 
-## 🧑‍💻 Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1. Requirements
-
-- Java JDK 8 or above
-- Apache Tomcat 8/9
-- MySQL Server
-- Any IDE (Eclipse / IntelliJ) or text editor
-
----
-
-### 2. Database Setup
-
-1. Start MySQL server.
-2. Import `book.sql` using the MySQL CLI or any GUI like phpMyAdmin:
+### 1. Clone the Repository
 
 ```bash
-mysql -u root -p < path/to/book.sql
+git clone https://github.com/your-username/OnlineBookStore.git
+cd OnlineBookStore-main
 ```
 
-3. Open `connection.jsp` and configure the connection:
+### 2. Create Virtual Environment
 
-```jsp
-<%
-    Class.forName("com.mysql.jdbc.Driver");
-    Connection conn = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/book", "root", "yourpassword"
-    );
-%>
+```bash
+python -m venv venv
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 ```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+> If `requirements.txt` is missing, run `pip freeze > requirements.txt` after installing Django.
+
+### 4. Apply Migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### 6. Run Development Server
+
+```bash
+python manage.py runserver
+```
+
+Visit: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---
 
-### 3. Run the Project
+## 🔐 Admin Panel
 
-#### Option 1: Deploy on Tomcat Manually
+Access the admin panel at:  
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
-1. Copy the `OnlineBookStore-main` folder to `webapps/` directory of your Tomcat.
-2. Start Tomcat server (`startup.bat` or via Eclipse).
-3. Open browser and visit:  
-   `http://localhost:8080/OnlineBookStore-main/`
+Log in using the superuser credentials you created.
 
-#### Option 2: Using Eclipse (Dynamic Web Project)
+---
 
-1. Import the folder as a Dynamic Web Project.
-2. Right-click project → Run As → Run on Server.
-3. Visit the local server URL in your browser.
+## 📝 Notes
+
+- Static and media files may need additional setup if deploying.
+- Default database is SQLite — for production, switch to PostgreSQL or MySQL.
+- For payments, integrate Razorpay, Stripe, or PayPal.
+- Improve SEO and security before deploying.
+
+---
+
+## 🚀 Deployment
+
+You can deploy this Django app using:
+
+- **Heroku** (using Gunicorn and WhiteNoise)
+- **PythonAnywhere**
+- **AWS / GCP / Azure**
+- **Docker**
+
+---
+
+## 📌 To Do
+
+- ✅ User authentication
+- ✅ Add to cart / order system
+- 🔄 Payment gateway integration
+- 🔄 Add pagination and filtering
+- 🔄 Full REST API with Django REST Framework
+- 🔄 Unit tests and CI/CD
 
 
 -----------------------
